@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "cubix_capstone", from = "src"}]
+packages = [{include = "cubix_capstone"}]
 
 
 [tool.poetry.group.dev.dependencies]
