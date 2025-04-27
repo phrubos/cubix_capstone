@@ -20,7 +20,7 @@ def read_file_from_datalake(container_name: str, file_path: str, format: str)-> 
     if format not in ["csv", "parquet", "json", "delta"]:
         raise ValueError("format must be one of csv, parquet, json, or delta")
 
-    full_path = f"abfss://{container_name}@{STORAGE_ACCOUNT_NAME}.dfs.core.windows.net/{file_path}"         
+    full_path = f"abfss://{container_name}@{STORAGE_ACCOUNT_NAME}.dfs.core.windows.net/{file_path}"
 
 
     spark = SparkSession.getActiveSession()
@@ -32,7 +32,7 @@ def read_file_from_datalake(container_name: str, file_path: str, format: str)-> 
     if format == "json":
         df = spark.read.json(full_path)
         return df
-    
+
     else:
 
         df = (
@@ -48,11 +48,11 @@ def read_file_from_datalake(container_name: str, file_path: str, format: str)-> 
 
 
 def write_file_to_datalake(
-    df: DataFrame, 
-    container_name: str, 
+    df: DataFrame,
+    container_name: str,
     file_path: str,
-    format: str, 
-    mode: str = "overwrite", 
+    format: str,
+    mode: str = "overwrite",
     partition_by: list[str] = None)-> None:
 
     """
