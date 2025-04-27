@@ -1,5 +1,5 @@
 import os
-from pyspark.sql import SparkSession, DataFrame
+from pyspark.sql import SparkSession
 
 
 
@@ -46,4 +46,3 @@ def authenticate_user() -> None:
 
     for key, value in config.items():
         spark.conf.set(key, value)
-    
