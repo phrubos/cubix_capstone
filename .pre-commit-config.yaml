@@ -12,6 +12,7 @@ repos:
       - id: check-ast
       - id: mixed-line-ending
       - id: debug-statements
+        args: [ '--fix=auto' ]
 
     #ruff: linting, formatting, import sorting and more
   - repo: https://github.com/astral-sh/ruff-pre-commit
