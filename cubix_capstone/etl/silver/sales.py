@@ -26,13 +26,12 @@ def get_sales(sales_raw: DataFrame) -> DataFrame:
             sales_raw
                 .select(
                     sf.col("son"),
-                    sf.col("orderdate").cast("date"), 
-                    sf.col("pk").cast("int"), 
-                    sf.col("ck").cast("int"), 
-                    sf.col("dateofshipping").cast("date"), 
+                    sf.col("orderdate").cast("date"),
+                    sf.col("pk").cast("int"),
+                    sf.col("ck").cast("int"),
+                    sf.col("dateofshipping").cast("date"),
                     sf.col("oquantity").cast("int")
                 )
                 .withColumnRenamed(SALES_MAPPING)
                 .dropDuplicates()
                 )
-
