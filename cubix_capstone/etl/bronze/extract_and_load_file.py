@@ -16,7 +16,7 @@ def bronze_ingest(
         Args:
             source_path (str): The path to the source file in the datalake.
             bronze_path (str): The path to the bronze file in the datalake.
-            
+
             file_name (str): The name of the file to ingest.
             container_name (str): The name of the container in the datalake.
             format (str): The format of the file to ingest.
