@@ -2,18 +2,18 @@ import pyspark.sql.functions as sf
 from pyspark.sql import DataFrame
 
 CUSTOMERS_MAPPING = {
-"ck" :	"CustomerKey"
-"name":	"Name"
-"bdate":	"BirthDate"
-"ms"	:"MaritalStatus"
-"gender":	"Gender"
-"income":	"YearlyIncome"
-"childrenhome":	"NumberChildrenAtHome"
-"occ":	"Occupation"
-"hof":	"HouseOwnerFlag"
-"nco":	"NumberCarsOwned"
-"addr1":	"Addressline1"
-"addr2":	"Addressline2"
+"ck" :	"CustomerKey",
+"name":	"Name",
+"bdate":	"BirthDate",
+"ms"	:"MaritalStatus",
+"gender":	"Gender",
+"income":	"YearlyIncome",
+"childrenhome":	"NumberChildrenAtHome",
+"occ":	"Occupation",
+"hof":	"HouseOwnerFlag",
+"nco":	"NumberCarsOwned",
+"addr1":	"Addressline1",
+"addr2":	"Addressline2",
 "phone":	"Phone"
 
 }
