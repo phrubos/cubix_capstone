@@ -52,44 +52,44 @@ def get_customers(customers_raw: DataFrame) -> DataFrame:
         sf.col("addr2"),
         sf.col("phone"),
     )
-    
+
     # Rename columns using a loop instead of withColumnsRenamed
     for old_name, new_name in CUSTOMERS_MAPPING.items():
         df = df.withColumnRenamed(old_name, new_name)
-    
+
     # Apply transformations
     df = df.withColumn(
-        "MaritalStatus", 
+        "MaritalStatus",
         sf.when(sf.col("MaritalStatus") == "M", 1)
           .when(sf.col("MaritalStatus") == "S", 0)
           .otherwise(None)
           .cast("int")
     )
-    
+
     df = df.withColumn(
-        "Gender", 
+        "Gender",
         sf.when(sf.col("Gender") == "M", 1)
           .when(sf.col("Gender") == "F", 0)
           .otherwise(None)
           .cast("int")
     )
-    
+
     df = df.withColumn(
         "FullAdress",
         sf.concat_ws(",", sf.col("Addressline1"), sf.col("Addressline2"))
     )
-    
+
     df = df.withColumn(
         "IncomeCategory",
         sf.when(sf.col("YearlyIncome") <= 50000, "Low")
           .when((sf.col("YearlyIncome") <= 100000), "Medium")
           .otherwise("High")
     )
-    
+
     df = df.withColumn(
         "BirthYear",
         sf.year(sf.col("BirthDate")).cast("int")
     )
-    
+
     # Drop duplicates
     return df.dropDuplicates()
