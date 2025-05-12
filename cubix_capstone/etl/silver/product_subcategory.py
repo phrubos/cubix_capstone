@@ -4,7 +4,7 @@ from pyspark.sql import DataFrame
 PRODUCT_SUBCATEGORY_MAPPING = {
 "psk": "ProductSubcategoryKey",
 "pck": "ProductCategoryKey",
-"espn": "EnglishProductSubcategoryName",
+"epsn": "EnglishProductSubcategoryName",
 "spsn": "SpanishProductSubcategoryName",
 "fpsn": "FrenchProductSubcategoryName"
 }
@@ -24,7 +24,7 @@ def get_product_subcategory(product_subcategory_raw: DataFrame) -> DataFrame:
             .select(
             sf.col("psk").cast("int"),
             sf.col("pck").cast("int"),
-            sf.col("espn"),
+            sf.col("epsn"),
             sf.col("spsn"),
             sf.col("fpsn")
             )

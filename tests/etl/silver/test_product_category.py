@@ -17,7 +17,7 @@ def test_get_product_category(spark):
         ],
         schema = [
             "pck",
-            "espn",
+            "epsn",
             "spsn",
             "fpsn",
             "extra_col"
