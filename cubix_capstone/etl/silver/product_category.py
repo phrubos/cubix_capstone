@@ -22,9 +22,9 @@ def get_product_category(product_category_raw: DataFrame) -> DataFrame:
             product_category_raw
             .select(
             sf.col("pck").cast("int"),
-            sf.col("epsn"),
-            sf.col("spsn"),
-            sf.col("fpsn")
+            sf.col("epcn"),
+            sf.col("spcn"),
+            sf.col("fpcn")
             )
             .withColumnsRenamed(PRODUCT_CATEGORY_MAPPING)
             .dropDuplicates()
