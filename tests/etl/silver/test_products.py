@@ -28,7 +28,7 @@ def test_get_products(spark):
             "range",
             "weight",
             "nameofmodel",
-            "ssi",
+            "ssl",
             "desc",
             "extra_col"
         ]

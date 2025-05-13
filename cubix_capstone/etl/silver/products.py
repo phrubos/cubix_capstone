@@ -14,7 +14,7 @@ PRODUCTS_MAPPING = {
   "range": "SizeRange",
   "weight": "Weight",
   "nameofmodel": "ModelName",
-  "ssi": "SafetyStockLevel",  # Assuming this is the correct mapping
+  "ssl": "SafetyStockLevel",  # Assuming this is the correct mapping
   "desc": "Description"
 }
 
@@ -45,7 +45,7 @@ def get_products(products_raw: DataFrame) -> DataFrame:
             sf.col("range"),
             sf.col("weight").cast(DecimalType(10, 2)).alias("weight"),
             sf.col("nameofmodel"),
-            sf.col("ssi").cast("int"),  # Changed from "ssl" to "ssi"
+            sf.col("ssl").cast("int"),  # Changed from "ssl" to "ssi"
             sf.col("desc")
             )
             .withColumnsRenamed(PRODUCTS_MAPPING)
