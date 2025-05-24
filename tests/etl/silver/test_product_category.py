@@ -29,9 +29,9 @@ def test_get_product_category(spark):
     expected_schema = st.StructType(
         [
             st.StructField("ProductCategoryKey", st.IntegerType(), True),
-            st.StructField("EnglishProductSubcategoryName", st.StringType(), True),
-            st.StructField("SpanishProductSubcategoryName", st.StringType(), True),
-            st.StructField("FrenchProductSubcategoryName", st.StringType(), True),
+            st.StructField("EnglishProductCategoryName", st.StringType(), True),
+            st.StructField("SpanishProductCategoryName", st.StringType(), True),
+            st.StructField("FrenchProductCategoryName", st.StringType(), True),
 
         ]
     )

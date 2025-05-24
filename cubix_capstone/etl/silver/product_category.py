@@ -3,9 +3,9 @@ from pyspark.sql import DataFrame
 
 PRODUCT_CATEGORY_MAPPING = {
 "pck": "ProductCategoryKey",
-"espn": "EnglishProductSubcategoryName",
-"spsn": "SpanishProductSubcategoryName",
-"fpsn": "FrenchProductSubcategoryName"
+"epcn": "EnglishProductCategoryName",
+"spcn": "SpanishProductCategoryName",
+"fpcn": "FrenchProductCategoryName"
 }
 
 
